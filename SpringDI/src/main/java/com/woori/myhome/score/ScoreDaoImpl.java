@@ -28,14 +28,18 @@ public class ScoreDaoImpl implements ScoreDao {
 	@Override
 	public void insert(ScoreDto dto) {
 		dto.setId(list.size()+1);
+		
 		dto.calc();
 		list.add(dto);
+		
 	}
-	
+
 	@Override
 	public ScoreDto getView(int id) {
+		
 		return list.get(id-1);
 	}
+
 }
 
 

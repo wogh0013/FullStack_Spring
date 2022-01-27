@@ -33,26 +33,26 @@
                 <td><%=dto.getKor()%></td>
               </tr>
               <tr>
-                <th>영어</th>
+                <th >영어</th>
                 <td><%=dto.getEng()%></td>
               </tr>
-              <tr>
-                <th>수학</th>
-                <td><%=dto.getMat()%></td>
+              <tr> 
+                <th >수학</th>
+                <td><%=dto.getMat()%></td> 
               </tr>
-              <tr>
-                <th>총점</th>
-                <td><%=dto.getTotal()%></td>
+               <tr> 
+                <th >총점</th>
+                <td><%=dto.getTotal()%></td> 
               </tr>
-              <tr>
-                <th>평균</th>
-                <td><%=dto.getAvg()%></td>
+               <tr> 
+                <th >평균</th>
+                <td><%=dto.getAvg()%></td> 
               </tr>
+             
             </tbody>
           </table>
-       
           <div class="container mt-3" style="text-align:right;">
-            <a href="<%=request.getContextPath()%>/board?cmd=list" class="btn btn-secondary">목록</a>
+            <a href="<%=request.getContextPath()%>/score/list" class="btn btn-secondary">목록</a>
          
           </div>
           

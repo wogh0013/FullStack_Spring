@@ -20,8 +20,7 @@ public class ScoreController {
 		return "score/score_list";
 	}
 	
-	//score_write.jsp로 이동하기
-	//데이터 입력이 아니라 바구니인 Model 객체는 사용하지 않는다. (단순 이동임)
+	//  /score/write 치면 -> score_write.jsp로 이동하기 
 	@RequestMapping("/score/write")
 	String score_write()
 	{

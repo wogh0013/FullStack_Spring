@@ -20,10 +20,13 @@ public class ScoreServiceImpl implements ScoreService{
 	@Override
 	public void insert(ScoreDto dto) {
 		dao.insert(dto);
+		
 	}
-	
+
 	@Override
 	public ScoreDto getView(int id) {
+		// TODO Auto-generated method stub
 		return dao.getView(id);
 	}
+
 }

@@ -28,6 +28,7 @@
             </colgroup>
         
             <tbody>
+                
               <tr>
                 <td>이름</td>
                 <td>
@@ -36,8 +37,7 @@
                         placeholder="이름을 입력하세요" >
                     </div>
                 </td>
-              </tr>     
-              
+              </tr>      
               <tr>
                 <td>국어</td>
                 <td>
@@ -46,28 +46,25 @@
                         placeholder="국어 성적을 입력하세요" >
                     </div>
                 </td>
-              </tr>
-              
-              <tr>
+              </tr>  
+               <tr>
                 <td>영어</td>
                 <td>
                     <div class="mb-3" style="margin-top:13px;">
                         <input type="text" class="form-control" id="eng" name="eng" 
-                        placeholder="영어 성적을 입력하세요" >
+                        placeholder="영어성적을 입력하세요" >
                     </div>
                 </td>
               </tr>
-              
-              <tr>
+               <tr>
                 <td>수학</td>
                 <td>
                     <div class="mb-3" style="margin-top:13px;">
                         <input type="text" class="form-control" id="mat" name="mat" 
-                        placeholder="수학 성적을 입력하세요" >
+                        placeholder="수학성적을 입력하세요" >
                     </div>
                 </td>
               </tr>  
-        
             </tbody>
           </table>
        

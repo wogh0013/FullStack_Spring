@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- 표현식 request.getAttribute("result") -->
-	${result}
+	${result}  <!--  표현식 request.getAttribute("result") -->
 </body>
 </html>
