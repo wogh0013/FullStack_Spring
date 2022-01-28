@@ -7,4 +7,6 @@ public interface BoardService {
 	void insert(BoardDto dto);
 	BoardDto getView(String id);
 	int getTotal(BoardDto dto);
+	void delete(String id);
+	void update(BoardDto dto);
 }

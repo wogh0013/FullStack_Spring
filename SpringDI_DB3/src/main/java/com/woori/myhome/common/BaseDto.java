@@ -7,8 +7,16 @@ public class BaseDto {
 	protected int pageSize=10;
 	protected int pgGroup=5;
 	protected int start=0;
+	protected int rnum=0;
 	
 	
+	
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
 	public int getStart() {
 		return start;
 	}

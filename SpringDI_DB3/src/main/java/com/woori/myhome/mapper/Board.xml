@@ -12,37 +12,44 @@
 	<!-- if test="key=='1'"  - 이렇게 쓰면 안된다 인식안된다 -->
 	
 	<select id="Board_getList"  parameterType="BoardDto"  resultType="BoardDto">
- 		select
-			A.id
-			,A.title
-			,A.writer
-			,A.contents 
-			,A.wdate
-		from board A 
-		<if test='key!=null and keyword!=null'>
-
-			<if test='key=="1"'>
-			where title like concat('%', #{keyword} , '%') or
-			      contents like concat('%', #{keyword} , '%') or 
-			      writer like concat('%', #{keyword} , '%') 
-			</if>
+ 		
+ 		select * from 
+ 		(
+	 		select
+				A.id
+				,A.title
+				,A.writer
+				,A.contents 
+				,A.wdate
+			    ,@rownum := @rownum+1 AS rnum
+				from board A, (select @rownum:=0) B
+				
+				
+			<if test='key!=null and keyword!=null'>
+	
+				<if test='key=="1"'>
+				where title like concat('%', #{keyword} , '%') or
+				      contents like concat('%', #{keyword} , '%') or 
+				      writer like concat('%', #{keyword} , '%') 
+				</if>
+				
+				<if test='key=="2"'>
+				where title like concat('%', #{keyword} , '%')
+				</if>
+				
+				<if test='key=="3"'>
+				where contents like concat('%', #{keyword} , '%')
+				</if>
+				
+				<if test='key=="4"'>
+				where title like concat('%', #{keyword} , '%') or
+				      contents like concat('%', #{keyword} , '%') 
+				</if>
+				
+			</if> 
 			
-			<if test='key=="2"'>
-			where title like concat('%', #{keyword} , '%')
-			</if>
-			
-			<if test='key=="3"'>
-			where contents like concat('%', #{keyword} , '%')
-			</if>
-			
-			<if test='key=="4"'>
-			where title like concat('%', #{keyword} , '%') or
-			      contents like concat('%', #{keyword} , '%') 
-			</if>
-			
-		</if> 
-		
-		order by id desc 
+			order by id desc
+		) A
 		limit #{start}, #{pageSize}    
 	</select>
 	<!--  
@@ -81,10 +88,6 @@
 		
 	</select>
 
-
-
-
-
 	
 	<insert id="Board_insert" parameterType="BoardDto">
 		insert into board
@@ -104,4 +107,32 @@
 
 	</select>
 	
+	<delete id="Board_delete" parameterType="String" >
+	delete from board where id=#{id}
+	</delete>
+	
+	
+	<update id="Board_update" parameterType="BoardDto" >
+	update board 
+		set title = #{title}
+			,writer = #{writer}
+			,contents = #{contents}
+	where  id=#{id}
+	</update>
+		
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

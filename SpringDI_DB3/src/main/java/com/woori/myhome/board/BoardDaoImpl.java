@@ -36,6 +36,16 @@ public class BoardDaoImpl implements BoardDao{
 		
 		return sm.selectOne("Board_getTotal", dto);
 	}
+
+	@Override
+	public void delete(String id) {
+		sm.delete("Board_delete", id);
+	}
+
+	@Override
+	public void update(BoardDto dto) {
+		sm.update("Board_update", dto);
+	}
 }
 
 

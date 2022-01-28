@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="com.woori.myhome.board.*" %>
+<%@page import="com.woori.myhome.gallery.*" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +16,7 @@
 <body>
     <%@include file="../include/nav.jsp" %>
 	<%
-	BoardDto dto = (BoardDto)request.getAttribute("boardDto");
+	GalleryDto dto = (GalleryDto)request.getAttribute("galleryDto");
 	%>
 
 	<form  name="myform" action="<%=request.getContextPath()%>/board/save" method="post">
@@ -54,7 +54,7 @@
                 <td>내용</td>
                 <td>
                     <div class="mb-3" style="margin-top:13px;">
-                      <textarea class="form-control" rows="5" id="contents" name="contents"><%=dto.getContents()%></textarea>
+                      <textarea class="form-control" rows="5" id="comment" name="comment"><%=dto.getComment()%></textarea>
                     </div>
                 </td>
               </tr>          

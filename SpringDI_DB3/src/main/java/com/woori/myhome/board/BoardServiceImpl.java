@@ -39,6 +39,18 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.getTotal(dto);
 	}
 
+	@Override
+	public void delete(String id) {
+		boardDao.delete(id);
+		
+	}
+
+	@Override
+	public void update(BoardDto dto) {
+		boardDao.update(dto);
+		
+	}
+
 
 	
 }

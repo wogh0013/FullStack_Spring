@@ -21,7 +21,7 @@
 	String key = StringUtil.nullToValue(request.getParameter("key"), "1");
 	String keyword = StringUtil.nullToValue(request.getParameter("keyword"), "");
 	String pg = StringUtil.nullToValue(request.getParameter("pg"), "0");
-	int totalCnt = (Integer)request.getAttribute("totalCnt");
+	int totalCnt = 120; //(Integer)request.getAttribute("totalCnt");
 %> 
 
 <%@include file="../include/nav.jsp" %>
@@ -50,36 +50,51 @@
             <button class="btn btn-secondary" type="button" onclick="goSearch()">Go</button>
           </div>
 
-        <table class="table table-hover ">
-        	<colgroup>
-        		<col width="8%">
-        		<col width="*">
-        		<col width="12%">
-        		<col width="12%">
-        	</colgroup>
-            <thead class="table-secondary">
-              <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-              </tr>
-            </thead>
-            <tbody>
-            <%
-            
-            List<BoardDto> list = (List<BoardDto>)request.getAttribute("boardList");
-           	for(BoardDto tempDto : list){
-            %>
-              <tr>
-                <td><%=totalCnt - tempDto.getRnum()+1 %></td>
-                <td><a href="#none" onclick="goView('<%=tempDto.getId()%>')" ><%=tempDto.getTitle()%></a></td>
-                <td><%=tempDto.getWriter()%></td>
-                <td><%=tempDto.getWdate()%></td>
-              </tr>
-            <%}%>
-            </tbody>
-          </table>
+        	<div class="row">
+              <!-- 한행시작 -->
+            <div class="col-sm-3">
+              <div class="thumbnail">
+                <a href="../resources/images/lights.jpg" target="_blank">
+                  <img src="../resources/images/lights.jpg" alt="Lights" style="width:100%">
+                  <div class="caption">
+                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="thumbnail">
+                <a href="../resources/images/nature.jpg" target="_blank">
+                  <img src="../resources/images/nature.jpg" alt="Nature" style="width:100%">
+                  <div class="caption">
+                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="thumbnail">
+                <a href="../resources/images/fjords.jpg" target="_blank">
+                  <img src="../resources/images/fjords.jpg" alt="Fjords" style="width:100%">
+                  <div class="caption">
+                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail">
+                  <a href="../resources/images/lights.jpg" target="_blank">
+                    <img src="../resources/images/lights.jpg" alt="Lights" style="width:100%">
+                    <div class="caption">
+                      <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+             <!-- 한행종료 -->
+          </div>
+
 
 		
  		  <div class="container mt-3" style="text-align:right;">

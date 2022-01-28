@@ -51,18 +51,40 @@ public class BoardController {
 	
 	
 	@RequestMapping(value="/board/write")
-	String board_write()
+	String board_write(Model model)
 	{
+		model.addAttribute("boardDto", new BoardDto()); 
 		return "board/board_write";
 	}
 	
 	@RequestMapping(value="/board/save")
 	String board_save(BoardDto dto)
 	{
-		service.insert(dto);
+		
+		if( dto.getId().equals(""))
+			service.insert(dto);
+		else 
+			service.update(dto);
 		
 		return "redirect:/board/list";  //글쓰고나면
 	}
+
+	@RequestMapping(value="/board/delete")
+	String board_delete(BoardDto dto)
+	{
+		service.delete(dto.getId());
+		
+		return "redirect:/board/list";  //글쓰고나면
+	}
+	
+	@RequestMapping(value="/board/modify")
+	String board_modify(BoardDto dto, Model model)
+	{
+		model.addAttribute("boardDto", service.getView(dto.getId()) );
+		
+		return "board/board_write"; //write.jsp 로 이동한다 
+	}
+	
 	
 }
 
