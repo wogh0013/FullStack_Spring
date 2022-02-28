@@ -9,7 +9,7 @@ public class BoardDto extends BaseDto{
 	private String writer="";
 	private String contents="";
 	private String wdate="";
-	
+	 
 	
 	public String getId() {
 		return id;

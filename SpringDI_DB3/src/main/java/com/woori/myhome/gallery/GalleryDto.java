@@ -9,7 +9,15 @@ public class GalleryDto extends BaseDto{
 	private String comment="";
 	private String wdate="";
 	private String delyn="";
+	private String image="";
 	
+	
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public String getId() {
 		return id;
 	}
